@@ -37,16 +37,7 @@ namespace TextBasedGameEngine.Engine.Classes
 
     public class HL_BaseEntity : HL_BaseEntityHeader
     {
-        public HL_BaseEntity(string _szSanitizedName)
-        {
 
-            szSanitizedName = _szSanitizedName;
-            eEntityClass = EEntityClass.ENTITY_PLAYER;
-        }
-        ~HL_BaseEntity()
-        {
-
-        }
         public void Spawn()
         {
             iHealth = iMaxHealth;
@@ -94,13 +85,13 @@ namespace TextBasedGameEngine.Engine.Classes
             return iMinShield;
         }
 
-        const int iMaxHealth = 100;
-        const int iMinHealth = 0;
-        int iHealth = iMaxHealth;
-        const int iMaxShield = 100;
-        const int iMinShield = 0;
-        int iShield = iMaxHealth;
-        ELifeState eLifeState = ELifeState.STATE_ALIVE;
+        public  int iMaxHealth = 100;
+        public  int iMinHealth = 0;
+        public  int iHealth = 100;
+        public  int iMaxShield = 100;
+        public int iMinShield = 0;
+        public int iShield = 100;
+        public ELifeState eLifeState = ELifeState.STATE_ALIVE;
         public string szSanitizedName;
     }
 

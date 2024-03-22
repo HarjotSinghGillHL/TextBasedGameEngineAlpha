@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TextBasedGameEngine.Engine.Classes;
 using TextBasedGameEngine.Tools;
+using TextBasedGameEngineAlpha.Engine.Classes;
 using TextBasedGameEngineAlpha.Engine.GameManager.WorldObjects;
 
 namespace TextBasedGameEngine.Engine.GameManager
@@ -19,12 +20,8 @@ namespace TextBasedGameEngine.Engine.GameManager
         public static HL_MapEntity GetEntityFromListByPosition(ref List<HL_MapEntity> EntityList, Vector2 vecPosition)
         {
             for (int iCurrentIndex = 0; iCurrentIndex < EntityList.Count; iCurrentIndex++)
-            {
                 if (EntityList[iCurrentIndex].vecPositionOnMap == vecPosition)
-                {
                     return EntityList[iCurrentIndex];
-                }
-            }
 
             return null;
         }
@@ -59,7 +56,12 @@ namespace TextBasedGameEngine.Engine.GameManager
                 {
                     if (HL_TileManager.IsEnemyTile(Map[iCurrentListIndex][iCurrentStringIndex]))
                     {
-                        EntityList.Add(new HL_MapEntity(new HL_BaseEntity("Enemy"), new Vector2(iCurrentStringIndex, iCurrentListIndex), Map[iCurrentListIndex][iCurrentStringIndex])); 
+                        if (Map[iCurrentListIndex][iCurrentStringIndex] == 'E')
+                            EntityList.Add(new HL_MapEntity( new HL_SmallEnemy("Enemy"), new Vector2(iCurrentStringIndex, iCurrentListIndex), Map[iCurrentListIndex][iCurrentStringIndex]));
+                        else if (Map[iCurrentListIndex][iCurrentStringIndex] == 'K')
+                            EntityList.Add(new HL_MapEntity(new HL_StandingEnemy("Enemy"), new Vector2(iCurrentStringIndex, iCurrentListIndex), Map[iCurrentListIndex][iCurrentStringIndex]));
+                        else if (Map[iCurrentListIndex][iCurrentStringIndex] == 'B')
+                            EntityList.Add(new HL_MapEntity(new HL_RunnerEnemy("Enemy"), new Vector2(iCurrentStringIndex, iCurrentListIndex), Map[iCurrentListIndex][iCurrentStringIndex]));
                     }
                 }
             }

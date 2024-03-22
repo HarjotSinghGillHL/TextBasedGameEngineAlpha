@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\Classes\BaseEntity.cs" />
+    <Compile Include="Engine\Classes\LocalPlayer.cs" />
+    <Compile Include="Engine\Classes\StandingEnemy.cs" />
+    <Compile Include="Engine\Classes\RunnerEnemy.cs" />
+    <Compile Include="Engine\Classes\SmallEnemy.cs" />
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Engine\GameManager\DamageHandler.cs" />
     <Compile Include="Engine\GameManager\EntityHandler.cs" />

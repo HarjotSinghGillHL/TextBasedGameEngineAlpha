@@ -8,6 +8,7 @@ using TextBasedGameEngine.Engine.Classes;
 using TextBasedGameEngine.Engine.GameManager;
 using TextBasedGameEngine.Engine.RenderSystem;
 using TextBasedGameEngine.Tools;
+using TextBasedGameEngineAlpha.Engine.Classes;
 using TextBasedGameEngineAlpha.Engine.GameManager.WorldObjects;
 using TextBasedGameEngineAlpha.Engine.RenderSystem.Frames;
 
@@ -27,7 +28,7 @@ namespace TextBasedGameEngineAlpha.Engine.GameManager.WorldEntities
 
         public HL_LocalPlayerHandler()
         {
-            Handle = new HL_BaseEntity("LocalPlayer");
+            Handle = new HL_SmallEnemy("LocalPlayer");
             iLocalOxygenAmount = 100;
         }
 

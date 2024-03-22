@@ -85,6 +85,7 @@ LABEL_SELECT_AGAIN:
 
         public void FrameStart()
         {
+            Console.CursorVisible = false;
             GlobalVarsMgr.OnFrameStart();
 
             if (Mode == EEngineMode.GAME)
